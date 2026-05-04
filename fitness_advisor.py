@@ -24,8 +24,13 @@ Outputs:
 '''
 #INPUTS
 name = input("Enter your name: ")
-current_weight = float(input("Enter your current weight in pounds: "))
-weight_loss_goal = float(input("Enter your weight loss goal in pounds: "))
+try:
+    current_weight = float(input("Enter your current weight in pounds: "))
+    weight_loss_goal = float(input("Enter your weight loss goal in pounds: "))
+except ValueError:
+    print("Error: Invalid input. Please enter a valid number.")
+    exit()
+
 strength = input("Enter your strength level (beginner, intermediate, advanced): ").lower()
 endurance = input("Enter your endurance level (beginner, intermediate, advanced): ").lower()
 
@@ -64,7 +69,7 @@ if continue_program == True:
         plan = "high-intensity strength training and walking 4-5 days per week"
         pounds_lost = 0.75
     elif strength == "advanced" and endurance == "intermediate":
-        plan = "high-intensity strength training and moderate cardio 4-5 days per week"
+        plan = "high-intensity strength training and moderate running 4-5 days per week"
         pounds_lost = 0.75
     else:
         plan = "Error: Invalid strength or endurance level. Please enter beginner, intermediate, or advanced."
