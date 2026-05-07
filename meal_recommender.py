@@ -26,6 +26,8 @@ time_of_day = input("Time of day: ").lower()
 dietary_preference = input("what is your dietary preference? gluten-free/dairy-free/none: ").lower()
 budget = input("Please enter your budget: low/medium/high: ").lower()
 #VALIDATION of inputs
+continue_program = True
+
 if time_of_day not in ["breakfast", "lunch", "dinner"]:
     print("Error: Invalid time of day. Please enter breakfast, lunch, or dinner.")
     continue_program = False

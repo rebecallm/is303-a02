@@ -23,7 +23,7 @@ Outputs:
 
 '''
 #INPUTS
-name = input("Enter your name: ")
+name = input("Enter your name: ").title()
 try:
     current_weight = float(input("Enter your current weight in pounds: "))
     weight_loss_goal = float(input("Enter your weight loss goal in pounds: "))
@@ -35,6 +35,8 @@ strength = input("Enter your strength level (beginner, intermediate, advanced): 
 endurance = input("Enter your endurance level (beginner, intermediate, advanced): ").lower()
 
 #VALIDATION 
+continue_program = True
+
 if current_weight <= 12 or current_weight >= 1000:
     print("Error: Weight must be greater than 12 and less than 1000 pounds.")
     continue_program = False
@@ -81,10 +83,3 @@ if continue_program == True:
       f"Weight Loss Goal: {weight_loss_goal}\n"
       f"Recommended 12-week Exercise Plan: {plan}\n"
       f"Estimated Pounds Lost Per Week: {pounds_lost:.2f}lb/week")
-
-      
-
-
-
-
-
