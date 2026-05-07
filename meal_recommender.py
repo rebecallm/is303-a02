@@ -13,19 +13,19 @@ Inputs:
 
 Processes:
 - Validate time of day (must be breakfast, lunch, or dinner)
-- Validate dietary preference (must be vegetarian, vegan, or none)
-- Recommend a meal based on the inputs
+- Validate dietary preference (must be gluten-free, dairy-free, or none) can't be both gluten-free and dairy-free
+- Recommend a meal based on the inputs from a predefined list of meal options
 
 Outputs:
 - print customer's name, time of day, dietary preference, budget, and recommended meal
 - Print error message if any input is invalid
 '''
-#INPUTS
-name = input("What is your name? ")
+#COLLECTING INPUTS
+name = input("What is your name? ").title()
 time_of_day = input("Time of day: ").lower()
 dietary_preference = input("what is your dietary preference? gluten-free/dairy-free/none: ").lower()
 budget = input("Please enter your budget: low/medium/high: ").lower()
-#VALIDATION
+#VALIDATION of inputs
 if time_of_day not in ["breakfast", "lunch", "dinner"]:
     print("Error: Invalid time of day. Please enter breakfast, lunch, or dinner.")
     continue_program = False
@@ -35,9 +35,10 @@ elif dietary_preference not in ["gluten-free", "dairy-free", "none"]:
 elif budget not in ["low", "medium", "high"]:
     print("Error: Invalid budget. Please enter low, medium, or high.")
     continue_program = False
-else:    continue_program = True
+else:
+    continue_program = True
 #PROCESSES
-if continue_program == True:        
+if continue_program == True:  
     if time_of_day == "breakfast" and dietary_preference == "gluten-free" and budget == "low":
         meal = "a bowl of gluten-free oatmeal topped with fresh fruit and a drizzle of honey"
     elif time_of_day == 'breakfast' and dietary_preference == "none" and budget == "low":
